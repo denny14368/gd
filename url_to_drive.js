@@ -88,7 +88,7 @@ function newPanel(app, msg, url, folderid, filename) {
   extra_links.add(app.createInlineLabel(', source-code available at '));
   extra_links.add(app.createAnchor('Google Apps Script', 'https://script.google.com/d/1Ye-OEn1bDPcmeKSe4gb0YSK83RPMc4sZJt79SRt-GRY653gm2qVUptoE/edit'));
   extra_links.add(app.createInlineLabel(' and at '));
-  extra_links.add(app.createAnchor('GitHub Gist', 'https://gist.github.com/denilsonsa/__FOOBAR__'));
+  extra_links.add(app.createAnchor('GitHub Gist', 'https://gist.github.com/denilsonsa/8134679'));
   extra_links.add(app.createInlineLabel('. '));
 
   var text = app.createLabel(msg);
