@@ -8,6 +8,11 @@
 // Source-code:
 // https://gist.github.com/denilsonsa/8134679
 // https://script.google.com/d/1Ye-OEn1bDPcmeKSe4gb0YSK83RPMc4sZJt79SRt-GRY653gm2qVUptoE/edit
+//
+// Other solutions written by other people:
+// https://ifttt.com/channels/google_drive/actions/78
+// https://sites.google.com/site/fileurltodrive/
+// Note: I wrote this script without looking at the source-code of other solutions.
 
 function getFilenameFromURL(url) {
   //                  (host-ish)/(path-ish/)(filename)
