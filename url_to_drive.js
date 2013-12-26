@@ -6,6 +6,7 @@
 // https://script.google.com/macros/s/AKfycbzvhbHS4hnWPVBDHjQzZHA0qWq0GR-6hY7TbYsNto6hZ0MeAFZt/exec
 //
 // Source-code:
+// https://gist.github.com/denilsonsa/8134679
 // https://script.google.com/d/1Ye-OEn1bDPcmeKSe4gb0YSK83RPMc4sZJt79SRt-GRY653gm2qVUptoE/edit
 
 function getFilenameFromURL(url) {
