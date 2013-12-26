@@ -68,7 +68,7 @@ function uploadToDrive(url, folderid, filename) {
   }
 
   // Debug: printing response headers.
-  msg += JSON.stringify(response.getHeaders(), undefined, 2) + '\n';
+  // msg += JSON.stringify(response.getHeaders(), undefined, 2) + '\n';
 
   return msg;
 }
