@@ -81,7 +81,7 @@ function uploadToDrive(url, folderid, filename) {
 function newPanel(app, msg, url, folderid, filename) {
   var form = app.createFormPanel();
  
-  var title = app.createLabel('Upload URL to Google Drive');
+  var title = app.createLabel('Upload URL to Google Drive (10MB limit)');
   title.setStyleAttributes({
     fontSize: '2em',
     margin: '0 1ex'
