@@ -39,6 +39,10 @@ function uploadToDrive(url, folderid, filename) {
   var msg = '';
   var response;
 
+  Logger.log('url=' + url);
+  Logger.log('folderid=' + folderid);
+  Logger.log('filename=' + filename);
+
   try {
     response = UrlFetchApp.fetch(url, {
       // muteHttpExceptions: true,
@@ -62,11 +66,30 @@ function uploadToDrive(url, folderid, filename) {
       if (folderid) {
         folder = DriveApp.getFolderById(folderid);
       }
-      var file = folder.createFile(response.getBlob());
+      var blob = response.getBlob();
+      var file = folder.createFile(blob);
       file.setName(filename);
+      file.setDescription("Downloaded from " + url);
 
-      msg += 'Saved "' + filename + '"\n';
-      msg += 'to folder "' + folder.getName() + '".\n';
+      var headers = response.getHeaders();
+      var content_length = NaN;
+      for (var key in headers) {
+        if (key.toLowerCase() == 'Content-Length'.toLowerCase()) {
+          content_length = parseInt(headers[key], 10);
+          break;
+        }
+      }
+
+      var blob_length = blob.getBytes().length;
+      msg += 'Saved "' + filename + '" (' + blob_length + ' bytes)';
+      if (!isNaN(content_length)) {
+        if (blob_length < content_length) {
+          msg += ' WARNING: truncated from ' + content_length + ' bytes.';
+        } else if (blob_length > content_length) {
+          msg += ' WARNING: size is greater than expected ' + content_length + ' bytes from Content-Length header.';
+        }
+      }
+      msg += '\nto folder "' + folder.getName() + '".\n';
     }
   } else {
     msg += 'Response code: ' + response.getResponseCode() + '\n';
