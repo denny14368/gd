@@ -39,10 +39,6 @@ function uploadToDrive(url, folderid, filename) {
   var msg = '';
   var response;
 
-  Logger.log('url=' + url);
-  Logger.log('folderid=' + folderid);
-  Logger.log('filename=' + filename);
-
   try {
     response = UrlFetchApp.fetch(url, {
       // muteHttpExceptions: true,
